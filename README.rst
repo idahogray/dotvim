@@ -6,26 +6,26 @@ First check out the latest version of the .vim files from github.
 .. code-block:: bash
    :linenos:
 
-       git clone git@github.com:idahogray/dotvim.git ~/.vim
+   git clone git@github.com:idahogray/dotvim.git ~/.vim
 
 Next, install the symlinks so vim will look at these files.
 
 .. code-block:: bash
    :linenos:
 
-        ln -s ~/.vim/vimrc ~/.vim
-        ln -s ~/.vim/gvimrc ~/.vim
+   ln -s ~/.vim/vimrc ~/.vim
+   ln -s ~/.vim/gvimrc ~/.vim
 
 Finally, install all of the plugins for pathogen to find.
 
 .. code-block:: bash
    :linenos:
 
-        cd ~/.vim
-        git submodule init
-        git submodule update
-        git submodule foreach git submodule init
-        git submodule foreach git submodule update
+   cd ~/.vim
+   git submodule init
+   git submodule update
+   git submodule foreach git submodule init
+   git submodule foreach git submodule update
 
 Install New Plugins
 ===================
@@ -36,11 +36,11 @@ Add a new git submodule to install a new plugin.
 .. code-block:: bash
    :linenos:
 
-        cd ~/.vim
-        git submodule add <git repository location> bundle/<plugin name>
-        git add .
-        git commit -m "Installed <plugin name>"
-        git push
+   cd ~/.vim
+   git submodule add <git repository location> bundle/<plugin name>
+   git add .
+   git commit -m "Installed <plugin name>"
+   git push
 
 
         
