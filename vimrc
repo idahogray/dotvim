@@ -4,6 +4,10 @@ call pathogen#helptags()
 "Turn on relative line numbering
 set rnu
 
+"Have a buffer be hidden when it has unsaved changes and a new buffer 
+"opened
+set hidden
+
 "Force myself to use hjkl instead of arrow keys, but only in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
