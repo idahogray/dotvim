@@ -1,6 +1,9 @@
 call pathogen#incubate()
 call pathogen#helptags()
 
+"Turn on relative line numbering
+set rnu
+
 "Force myself to use hjkl instead of arrow keys, but only in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
