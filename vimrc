@@ -13,3 +13,7 @@ syntax on
 if has("autocmd")
 	filetype plugin indent on
 endif
+
+"Set the color scheme to somethat that (hopefully) works in terminals and
+"in the gui gvim
+colorscheme ron
