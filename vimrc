@@ -22,13 +22,23 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 "Displays whether paste is turned on in insert mode
 set showmode
+"--------------------------------------------------------------------
 
 "Make backspace key behave as expected
 set backspace=indent,eol,start
 
 "Remap the <Leader> key
 let mapleader = ","
-"--------------------------------------------------------------------
+
+"Bind nohl
+"Removes highlight of your last search
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
+" ******************************************************************
+
+"Turn on highlighting of search matches
+set hlsearch
 
 "Turn on relative line numbering
 set rnu
