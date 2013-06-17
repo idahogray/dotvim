@@ -24,7 +24,7 @@ set pastetoggle=<F2>
 set showmode
 
 "Make backspace key behave as expected
-backspace=indent,eol,start
+set backspace=indent,eol,start
 "--------------------------------------------------------------------
 
 "Turn on relative line numbering
