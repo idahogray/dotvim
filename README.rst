@@ -4,7 +4,7 @@ Installation
 First check out the latest version of the .vim files from github.
 
 .. code-block:: bash
-   :linenos:
+    :linenos:
 
    git clone git@github.com:idahogray/dotvim.git ~/.vim
 
