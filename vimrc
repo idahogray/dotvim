@@ -22,6 +22,9 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 "Displays whether paste is turned on in insert mode
 set showmode
+
+"Make backspace key behave as expected
+backspace=indent,eol,start
 "--------------------------------------------------------------------
 
 "Turn on relative line numbering
