@@ -8,8 +8,21 @@ call pathogen#helptags()
 autocmd! bufwritepost .vimrc source %
 
 "Better copy/paste
+"--------------------------------------------------------------------
 "Makes the clipboard behave as you would expect with any other editor
 set clipboard=unnamed
+
+"Allows toggling of how paste behaves in relation to the indent level
+" of the text being pasted in
+"Pressing <F2> in normal mode toggles the paste option and displays
+" the value
+" vim.wikia.com/wiki/Toggle_auto-indenting_for_code_past#Paste_toggle
+nnoremap <F2> :set invpaste paste?<CR>
+"Toggles the paste option in insert mode
+set pastetoggle=<F2>
+"Displays whether paste is turned on in insert mode
+set showmode
+"--------------------------------------------------------------------
 
 "Turn on relative line numbering
 set rnu
