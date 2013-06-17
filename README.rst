@@ -60,4 +60,4 @@ vimrc
 Many of the items in my vimrc file are from a Pycon APAC presentation
 from Martin Brochhaus_
 
-.. _Brochhaus: www.youtube.com/watch?v=YhqsjUUHj6g
+.. _Brochhaus: http://www.youtube.com/watch?v=YhqsjUUHj6g
