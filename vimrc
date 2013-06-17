@@ -35,6 +35,12 @@ let mapleader = ","
 noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
+
+"Quick save with ,s combination
+noremap <Leader>s :update<CR>
+vnoremap <Leader>s <C-C>:update<CR>
+inoremap <Leader>s <C-O>:update<CR>
+
 " ******************************************************************
 
 "Turn on highlighting of search matches
