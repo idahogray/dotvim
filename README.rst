@@ -40,3 +40,16 @@ Add a new git submodule to install a new plugin.
 
 
         
+Plugins
+=======
+
+* pathogen_ is used to manage plugins
+* python-mode_ is a group of plugins useful for writing python code
+* riv.vim_ is for editing restructuredtext documents
+
+
+.. _pathogen: https://github.com/tpope/vim-pathogen
+
+.. _python-mode: https://github.com/klen/python-mode
+
+.. _riv.vim: https://github.com/Rykka/riv.vim
