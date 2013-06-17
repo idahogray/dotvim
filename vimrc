@@ -41,6 +41,9 @@ noremap <Leader>s :update<CR>
 vnoremap <Leader>s <C-C>:update<CR>
 inoremap <Leader>s <C-O>:update<CR>
 
+"Easier moving between tabs
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
 " ******************************************************************
 
 "Turn on highlighting of search matches
