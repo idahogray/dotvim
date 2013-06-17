@@ -25,6 +25,9 @@ set showmode
 
 "Make backspace key behave as expected
 set backspace=indent,eol,start
+
+"Remap the <Leader> key
+let mapleader = ","
 "--------------------------------------------------------------------
 
 "Turn on relative line numbering
