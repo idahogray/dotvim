@@ -53,3 +53,11 @@ Plugins
 .. _python-mode: https://github.com/klen/python-mode
 
 .. _riv.vim: https://github.com/Rykka/riv.vim
+
+vimrc
+=====
+
+Many of the items in my vimrc file are from a Pycon APAC presentation
+from Martin Brochhaus_
+
+.. _Brochhaus: www.youtube.com/watch?v=YhqsjUUHj6g
