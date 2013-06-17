@@ -3,20 +3,20 @@ Installation
 
 First check out the latest version of the .vim files from github.
 
-:: code-block:: bash
+.. code-block:: bash
 
        git clone git@github.com:idahogray/dotvim.git ~/.vim
 
 Next, install the symlinks so vim will look at these files.
 
-:: code-block:: bash
+.. code-block:: bash
 
         ln -s ~/.vim/vimrc ~/.vim
         ln -s ~/.vim/gvimrc ~/.vim
 
 Finally, install all of the plugins for pathogen to find.
 
-:: code-block:: bash
+.. code-block:: bash
 
         cd ~/.vim
         git submodule init
@@ -30,7 +30,7 @@ Install New Plugins
 I am using pathogen with git submodules to manage my vim plugins.
 Add a new git submodule to install a new plugin.
 
-:: code-block:: bash
+.. code-block:: bash
 
         cd ~/.vim
         git submodule add <git repository location> bundle/<plugin name>
