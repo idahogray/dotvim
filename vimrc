@@ -48,6 +48,10 @@ map <Leader>m <esc>:tabnext<CR>
 "Map the sort funtion - useful for sorting import statements in
 " python
 noremap <Leader>s :sort<CR>
+
+"Easier indention
+vnoremap < <gv
+vnoremap > >gv
 " ******************************************************************
 
 "Turn on highlighting of search matches
