@@ -37,13 +37,17 @@ vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
 "Quick save with ,s combination
-noremap <Leader>s :update<CR>
-vnoremap <Leader>s <C-C>:update<CR>
-inoremap <Leader>s <C-O>:update<CR>
+noremap <C-Z> :update<CR>
+vnoremap <C-Z> <C-C>:update<CR>
+inoremap <C-Z> <C-O>:update<CR>
 
 "Easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
+
+"Map the sort funtion - useful for sorting import statements in
+" python
+noremap <Leader>s :sort<CR>
 " ******************************************************************
 
 "Turn on highlighting of search matches
