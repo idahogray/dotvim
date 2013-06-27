@@ -7,3 +7,6 @@
 [submodule "bundle/riv.vim"]
 	path = bundle/riv.vim
 	url = git@github.com:Rykka/riv.vim.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
