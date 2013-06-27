@@ -47,6 +47,7 @@ Plugins
 * python-mode_ is a group of plugins useful for writing python code
 * riv.vim_ is for editing restructuredtext documents
 * NERDTree_ is for more advanced file browsing and navigation
+* MiniBufExpl_ is for adding "Tab" functionality to buffers
 
 
 .. _pathogen: https://github.com/tpope/vim-pathogen
@@ -54,6 +55,10 @@ Plugins
 .. _python-mode: https://github.com/klen/python-mode
 
 .. _riv.vim: https://github.com/Rykka/riv.vim
+
+.. _NERDTree: https://github.com/scrooloose/nerdtree
+
+.. _MiniBufExpl: https://github.com/fholgado/minibufexpl.vim
 
 
 vimrc
@@ -64,4 +69,3 @@ from Martin Brochhaus_
 
 .. _Brochhaus: http://www.youtube.com/watch?v=YhqsjUUHj6g
 
-.. _NERDTree: https://github.com/scrooloose/nerdtree
