@@ -1,5 +1,7 @@
-call pathogen#incubate()
-call pathogen#helptags()
+set nocompatible
+filetype off
+syntax on
+call pathogen#infect()
 
 "From Martin Brochhaus Pycon APAC 2012 video
 "www.youtube.com/watch?v=YhqsjUUHj6g
@@ -72,11 +74,14 @@ nnoremap <right> <nop>
 
 
 "Needed for riv
-syntax on
-if has("autocmd")
-	filetype plugin indent on
-endif
+"syntax on
+"if has("autocmd")
+"	filetype plugin indent on
+"endif
 
 "Set the color scheme to somethat that (hopefully) works in terminals and
 "in the gui gvim
-colorscheme ron
+"colorscheme ron
+
+"Makes the airline status line appear all of the time
+set laststatus=2
