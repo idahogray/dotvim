@@ -73,11 +73,10 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 
 
-"Needed for riv
-"syntax on
-"if has("autocmd")
-"	filetype plugin indent on
-"endif
+"Needed for python-mode
+filetype plugin indent on
+syntax on
+
 
 "Set the color scheme to somethat that (hopefully) works in terminals and
 "in the gui gvim
