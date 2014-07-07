@@ -84,3 +84,28 @@ syntax on
 
 "Makes the airline status line appear all of the time
 set laststatus=2
+
+"Turn on column highlighting for column 80 but only when the line is longer
+"than 80 characters
+"From OSCON 2013 talk by Damian Conway: More Instantly Better Vim
+"https://www.youtube.com/watch?v=aHm36-na4-4
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+
+"=====[ Highlight matches when jumping to next ]=============
+" This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+nnoremap <silent> N   N:call HLNext(0.4)<cr>
+highlight WhiteOnRed guibg=red
+" Just highlight the match in red...
+function! HLNext (blinktime)
+	let [bufnum, lnum, col, off] = getpos('.')
+	let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+	let target_pat = '\c\%#'.@/
+	let ring = matchadd('WhiteOnRed', target_pat, 101)
+	redraw
+	exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+	call matchdelete(ring)
+	redraw
+endfunction
