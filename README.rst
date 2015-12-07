@@ -11,8 +11,8 @@ Next, install the symlinks so vim will look at these files.
 
 .. code-block:: bash
 
-   ln -s ~/.vim/vimrc ~/.vim
-   ln -s ~/.vim/gvimrc ~/.vim
+   ln -s ~/.vim/vimrc ~/.vimrc
+   ln -s ~/.vim/gvimrc ~/.vimrc
 
 Finally, install all of the plugins for pathogen to find.
 
