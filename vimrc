@@ -109,3 +109,18 @@ function! HLNext (blinktime)
 	call matchdelete(ring)
 	redraw
 endfunction
+
+" Disable folding for restructuredtext files
+let g:riv_disable_folding=1
+
+" Disable autocomplete because it takes forever
+let g:pymode_rope = 0
+
+" Make navigating split windows easier and quicker
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Toggle folding with spacebar instead of za
+nnoremap <space> za
