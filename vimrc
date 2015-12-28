@@ -109,3 +109,15 @@ function! HLNext (blinktime)
 	call matchdelete(ring)
 	redraw
 endfunction
+
+
+"====[ python-mode options ] ====
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_lint_checkers = ['pylint', 'pep8', 'mccabe', 'pep257']
+let g:riv_disable_folding = 1
+"let g:pymode_virtualenv = 1
+"let g:pymode_virtualenv_path = 'C:/Anaconda/envs/vim'
+"
+
+" Use spacebar to toggle folding
+nnoremap <space> za
