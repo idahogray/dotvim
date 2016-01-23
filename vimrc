@@ -110,6 +110,13 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
+"====[ python-mode options ] ====
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_lint_checkers = ['pylint', 'pep8', 'mccabe', 'pep257']
+let g:riv_disable_folding = 1
+"let g:pymode_virtualenv = 1
+"let g:pymode_virtualenv_path = 'C:/Anaconda/envs/vim'
+
 " Disable folding for restructuredtext files
 let g:riv_disable_folding=1
 
@@ -122,5 +129,5 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Toggle folding with spacebar instead of za
+" Use spacebar to toggle folding
 nnoremap <space> za
