@@ -38,7 +38,13 @@ Add a new git submodule to install a new plugin.
    git commit -m "Installed <plugin name>"
    git push
 
+Update Plugins
+==============
 
+.. code-block:: bash
+
+   cd ~/vimfiles
+   git submodule foreach git pull origin master
         
 Plugins
 =======
