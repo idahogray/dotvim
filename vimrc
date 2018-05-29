@@ -1,133 +1,75 @@
-set nocompatible
-filetype off
-syntax on
-call pathogen#infect()
+" let g:python3_host_prog = 'C:\ProgramData\Miniconda3\python.exe'
+set pythonthreedll=C:\Users\kgray\AppData\Local\Programs\Python\Python36-32\python36.dll
+set pyxversion=3
 
-"From Martin Brochhaus Pycon APAC 2012 video
-"www.youtube.com/watch?v=YhqsjUUHj6g
-" ******************************************************************
-"Automatically load changes from .vimrc when it is changed and saved
-autocmd! bufwritepost .vimrc source %
+" Specify a directory for plugins
+call plug#begin('~\vimfiles\plugged')
+Plug 'cjrh/vim-conda'
+Plug 'tmhedberg/SimpylFold'
+Plug 'Konfekt/FastFold'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'w0rp/ale'
+Plug 'maralla/completor.vim'
+call plug#end()
 
-"Better copy/paste
-"--------------------------------------------------------------------
-"Makes the clipboard behave as you would expect with any other editor
-set clipboard=unnamed
+" Automatically load changes from init.vim when it is changed and saved
+autocmd! bufwritepost vimrc source %
 
-"Allows toggling of how paste behaves in relation to the indent level
-" of the text being pasted in
-"Pressing <F2> in normal mode toggles the paste option and displays
-" the value
-" vim.wikia.com/wiki/Toggle_auto-indenting_for_code_past#Paste_toggle
-nnoremap <F2> :set invpaste paste?<CR>
-"Toggles the paste option in insert mode
-set pastetoggle=<F2>
-"Displays whether paste is turned on in insert mode
-set showmode
-"--------------------------------------------------------------------
+" Use spacebar to toggle folding
+nnoremap <space> za
 
-"Make backspace key behave as expected
-set backspace=indent,eol,start
-
-"Remap the <Leader> key
-let mapleader = ","
-
-"Bind nohl
-"Removes highlight of your last search
-noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
-
-"Quick save with ,s combination
-noremap <C-Z> :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
-
-"Easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
-
-"Map the sort funtion - useful for sorting import statements in
-" python
-noremap <Leader>s :sort<CR>
-
-"Easier indention
-vnoremap < <gv
-vnoremap > >gv
-" ******************************************************************
-
-"Turn on highlighting of search matches
-set hlsearch
-
-"Turn on relative line numbering
-set rnu
-
-"Have a buffer be hidden when it has unsaved changes and a new buffer 
-"opened
-set hidden
-
-"Force myself to use hjkl instead of arrow keys, but only in normal mode
+" Force the use of hjkl instead of arrow keys,
+" but only in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
+" Make indentation easier by re-selecting the rows after
+" the indentation action
+vnoremap < <gv
+vnoremap > >gv
 
-"Needed for python-mode
-filetype plugin indent on
-syntax on
+" Make the clipboard behave as you would expect with any other editor
+" Puts the yanked items in the Windows clipboard
+set clipboard=unnamed
 
+" Turn on hybrid line numbering so it shows the line number
+" for the cursor line and relative numbering for everything else
+set relativenumber
+set number
 
-"Set the color scheme to somethat that (hopefully) works in terminals and
-"in the gui gvim
-"colorscheme ron
-
-"Makes the airline status line appear all of the time
+" Make the status line always be visible
 set laststatus=2
 
-"Turn on column highlighting for column 80 but only when the line is longer
-"than 80 characters
-"From OSCON 2013 talk by Damian Conway: More Instantly Better Vim
-"https://www.youtube.com/watch?v=aHm36-na4-4
+" Have the buffer be hidden when it has unsaved changes and a new buffer
+" opened
+set hidden
+
+" Use the python-language-server as the linter
+" This will use all of the available linters: pylint, flake8, etc.
+let g:ale_linters = {'python': ['pyls'],}
+
+" Set the initial fold level to show the top level
+" functions and classes
+set foldlevel=1
+
+" let g:conda_startup_msg_suppress = 1
+
+" Set the python interpreter to be the one from python.org which
+" has jedi installed in it
+let g:completor_python_library = 'C:\Users\kgray\AppData\Local\Programs\Python\Python36-32'
+
+" Turn on column highlighting for column 80 but only when the line is longer
+" than 80 characters
+" From OSCON 2013 talk by Damian Conway: More Instantly Better Vim
+" https://www.youtube.com/watch?v=aHm36-na4-4
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
-
-
-"=====[ Highlight matches when jumping to next ]=============
-" This rewires n and N to do the highlighing...
-nnoremap <silent> n   n:call HLNext(0.4)<cr>
-nnoremap <silent> N   N:call HLNext(0.4)<cr>
-highlight WhiteOnRed guibg=red
-" Just highlight the match in red...
-function! HLNext (blinktime)
-	let [bufnum, lnum, col, off] = getpos('.')
-	let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-	let target_pat = '\c\%#'.@/
-	let ring = matchadd('WhiteOnRed', target_pat, 101)
-	redraw
-	exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-	call matchdelete(ring)
-	redraw
-endfunction
-
-"====[ python-mode options ] ====
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_lint_checkers = ['pylint', 'pep8', 'mccabe', 'pep257']
-let g:riv_disable_folding = 1
-"let g:pymode_virtualenv = 1
-"let g:pymode_virtualenv_path = 'C:/Anaconda/envs/vim'
-
-" Disable folding for restructuredtext files
-let g:riv_disable_folding=1
-
-" Disable autocomplete because it takes forever
-let g:pymode_rope = 0
 
 " Make navigating split windows easier and quicker
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" Use spacebar to toggle folding
-nnoremap <space> za
