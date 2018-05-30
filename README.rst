@@ -1,70 +1,109 @@
 Installation
 ============
 
-First check out the latest version of the .vim files from github.
+First check out the latest version of the .vim files from github (Linux).
 
 .. code-block:: bash
 
    git clone git@github.com:idahogray/dotvim.git ~/.vim
 
-Next, install the symlinks so vim will look at these files.
+or Windows.
+
+.. code-block:: cmd
+
+   git clone git@github.com:idahogray/dotvim.git %HOME%/vimfiles
+
+Install the symlinks so vim will look at these files (Linux).
 
 .. code-block:: bash
 
    ln -s ~/.vim/vimrc ~/.vimrc
    ln -s ~/.vim/gvimrc ~/.vimrc
 
-Finally, install all of the plugins for pathogen to find.
+Create an 'autoload' directory under the new .vim directory (Linux).
 
 .. code-block:: bash
 
-   cd ~/.vim
-   git submodule init
-   git submodule update
-   git submodule foreach git submodule init
-   git submodule foreach git submodule update
+   mdkir .vim/autoload
+
+Create an 'autoload' directory under the new vimrc directory (Windows).
+
+.. code-block:: bash
+
+   mdkir vimfiles\autoload
+
+Finally, install the plugins by opening vim and running the
+PlugInstall command.
+
+.. code-block:: vim-command
+
+   :PlugInstall
 
 Install New Plugins
 ===================
         
-I am using pathogen with git submodules to manage my vim plugins.
-Add a new git submodule to install a new plugin.
+I am using vim-plug to manage my vim plugins. Add a new plugin
+to the vimrc file.
 
-.. code-block:: bash
+.. code-block:: vimrc
 
-   cd ~/.vim
-   git submodule add <git repository location> bundle/<plugin name>
-   git add .
-   git commit -m "Installed <plugin name>"
-   git push
+   call plug#begin("~\vimfiles\plugged')
+   Plug 'cjrh/vim-conda'
+   call plug#end()
+
+Then run the PlugInstall command in vim.
+
+.. code-block:: vim-command
+
+   :PlugInstall
 
 Update Plugins
 ==============
 
-.. code-block:: bash
+Run the PlugUpdate command to update all plugins.
 
-   cd ~/vimfiles
-   git submodule foreach git pull origin master
+.. code-block:: vim-command
+
+   :PlugUpdate
         
+Upgrade vim-plug
+================
+
+Run the PlugUpgrade command to upgrade vim-plug itself.
+
+.. code-block:: vim-command
+
+   :PlugUpgrade
+        
+Remove Plugin
+=============
+Remove the plugin from the vimrc file and then run PlugClean.
+
+.. code-block:: vim-command
+
+   :PlugClean
+        
+
 Plugins
 =======
 
-* pathogen_ is used to manage plugins
-* python-mode_ is a group of plugins useful for writing python code
-* riv.vim_ is for editing restructuredtext documents
-* NERDTree_ is for more advanced file browsing and navigation
+* vim-plug_ is the plugin manager
 * MiniBufExpl_ is for adding "Tab" functionality to buffers
-
-
-.. _pathogen: https://github.com/tpope/vim-pathogen
-
-.. _python-mode: https://github.com/klen/python-mode
-
-.. _riv.vim: https://github.com/Rykka/riv.vim
-
-.. _NERDTree: https://github.com/scrooloose/nerdtree
+* vim-conda_ is for changing conda environments for jedi completions
+* SimpylFold_ is for folding Python source code
+* FastFold_ is to speed up SimpyFold_ folding
+* lightline.vim_ is for the status line
+* ale_ is for linting python code
+* completor_ is for Python completion using jedi
 
 .. _MiniBufExpl: https://github.com/fholgado/minibufexpl.vim
+.. _vim-plug: https://github.com/junegunn/vim-plug
+.. _vim-conda: https://github.com/cjrh/vim-conda
+.. _SimpylFold: https://github.com/tmhedberg/SimpylFold
+.. _FastFold: https://github.com/Konfekt/FastFold
+.. _lightline.vim: https://github.com/itchyny/lightline.vim
+.. _ale: https://github.com/w0rp/ale
+.. _completor: https://github.com/maralla/completor.vim
 
 
 vimrc
