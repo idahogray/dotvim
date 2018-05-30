@@ -32,6 +32,9 @@ Create an 'autoload' directory under the new vimrc directory (Windows).
 
    mdkir vimfiles\autoload
 
+Download plug.vim from github and put it in the new 'autoload' directory.
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 Finally, install the plugins by opening vim and running the
 PlugInstall command.
 
