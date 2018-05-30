@@ -11,6 +11,7 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " Automatically load changes from init.vim when it is changed and saved
@@ -84,3 +85,7 @@ set wildmenu
 " Use %% to expand %:h when in command mode
 " %:h expands to the path of the active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Use the dark solarized color scheme
+set background=dark
+colorscheme solarized
